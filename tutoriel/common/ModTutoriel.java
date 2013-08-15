@@ -30,11 +30,10 @@ public class ModTutoriel
 	@Instance("ModTutoriel")
 	public static ModTutoriel instance;
 	
-	//declaration des blocs - blocks statement
+	//declaration des blocs et et items - blocks and items statement
 	public static Block BlockTutorial, TutorialMetadata;
 	public static Item ItemTutorial, ItemWithMetadata, TutorialHelmet, TutorialChestPlate, TutorialLeggings, TutorialBoots, TutorialEgg;
-	
-	public static int BlockTutorialID, TutorialMetadataID, ItemTutorialID, ItemWithMetadataID, TutorialHelmetID,
+	public static Item TutorialSword,TutorialAxe,TutorialPickaxe,TutorialShovel,TutorialHoe;	public static int BlockTutorialID, TutorialMetadataID, ItemTutorialID, ItemWithMetadataID, TutorialHelmetID,
 	TutorialChestPlateID, TutorialLeggingsID, TutorialBootsID, TutorialEggID;
 	
 	static EnumArmorMaterial TutorialArmor = EnumHelper.addArmorMaterial("Tutorial", 20, new int[]{2, 8, 4, 2}, 15);
@@ -92,6 +91,14 @@ public class ModTutoriel
 		TutorialLeggings = new ItemTutorialArmor(TutorialLeggingsID, TutorialArmor, 0, 2).setUnlocalizedName("TutorialLeggings").func_111206_d("modtutoriel:LeggingsTutorial");
 		TutorialBoots = new ItemTutorialArmor(TutorialBootsID, TutorialArmor, 0, 3).setUnlocalizedName("TutorialBoots").func_111206_d("modtutoriel:BootsTutorial");
 		TutorialEgg = new ItemTutorialEgg(TutorialEggID, 5, 4.5F, false).setUnlocalizedName("TutorialEgg").func_111206_d("modtutoriel:ChocolateEgg");
+
+EnumToolMaterial TutorialMaterial = EnumHelper.addToolMaterial("TutorialMaterial", 3, 1561, 8.0F, 3.0F, 10);
+		
+		TutorialSword = new TutorialSword (12002,TutorialMaterial).setUnlocalizedName("TutorialSword").func_111206_d("modtutoriel:tutoriel_sword");
+		TutorialAxe = new TutorialAxe (12003,TutorialMaterial).setUnlocalizedName("TutorialAxe").func_111206_d("modtutoriel:tutoriel_axe");
+	    TutorialPickaxe = new TutorialPickaxe (12004,TutorialMaterial).setUnlocalizedName("TutorialPickaxe").func_111206_d("modtutoriel:tutoriel_pickaxe");
+	    TutorialShovel = new TutorialShovel (12005,TutorialMaterial).setUnlocalizedName("TutorialShovel").func_111206_d("modtutoriel:tutoriel_shovel");
+	    TutorialHoe = new TutorialHoe (12006,TutorialMaterial).setUnlocalizedName("TutorialHoe").func_111206_d("modtutoriel:tutoriel_hoe");
 		
 		//Enregistrement des items - Item registry
 		GameRegistry.registerItem(ItemTutorial, "ItemTutorial", "ModTutoriel");
@@ -101,7 +108,12 @@ public class ModTutoriel
 		GameRegistry.registerItem(TutorialLeggings, "TutorialLeggings", "ModTutoriel");
 		GameRegistry.registerItem(TutorialBoots, "TutorialBoots", "ModTutoriel");
 		GameRegistry.registerItem(TutorialEgg, "TutorialEgg", "ModTutoriel");
-		
+	
+GameRegistry.registerItem(TutorialSword, "TutorialSword", "ModTutoriel");
+	    GameRegistry.registerItem(TutorialPickaxe, "TutorialPickaxe", "ModTutoriel");
+	    GameRegistry.registerItem(TutorialAxe, "TutorialAxe", "ModTutoriel");
+	    GameRegistry.registerItem(TutorialShovel, "TutorialShovel", "ModTutoriel");
+	    GameRegistry.registerItem(TutorialHoe, "TutorialHoe", "ModTutoriel");		
 		//Achievements
 	}
 	
@@ -111,6 +123,12 @@ public class ModTutoriel
 		//Event Bus
 		MinecraftForge.EVENT_BUS.register(new LivingEvent());
 		
+	MinecraftForge.setToolClass(TutorialPickaxe, "pickaxe", 2);
+		MinecraftForge.setToolClass(TutorialShovel, "shovel", 2);
+		MinecraftForge.setToolClass(TutorialAxe, "axe", 2);
+		MinecraftForge.setToolClass(TutorialSword, "sword", 2);
+		MinecraftForge.setToolClass(TutorialHoe, "hoe", 2);
+
 		//Registry
 		GameRegistry.registerTileEntity(TileEntityTutorial.class, "TileEntityTutorial");
 
