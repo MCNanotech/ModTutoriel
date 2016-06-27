@@ -54,6 +54,7 @@ item.TutorialAxe.name=Tutorial Axe
 item.TutorialShovel.name=Tutorial Shovel
 item.TutorialHoe.name=Tutorial Hoe
 item.bucketTutorial.name=Tutorial Bucket
+item.Tuto_Bow.name=Bow tutorial
 
 item.record.cd.desc=Tutorial record
 
