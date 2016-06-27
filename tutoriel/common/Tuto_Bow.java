@@ -1,4 +1,4 @@
-package ma.Yeyvo.MVC.common;
+package tutoriel.common;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
