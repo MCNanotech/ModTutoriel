@@ -19,14 +19,14 @@ import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Obsidian_Bow extends Item
+public class Tuto_Bow extends Item
 {
 	public static final String[] bowPullIconNameArray = new String[] {"1", "2", "3"};
     @SideOnly(Side.CLIENT)
     private IIcon[] iconArray;
     
 
-    public Obsidian_Bow()
+    public Tuto_Bow()
     {
         this.maxStackSize = 1;
         this.setMaxDamage(700);
