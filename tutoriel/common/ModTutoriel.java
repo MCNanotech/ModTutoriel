@@ -41,7 +41,7 @@ public class ModTutoriel
 
 	// declaration des blocs - blocks statement
 	public static Block BlockTutorial, TutorialMetadata, StairsTutorial, DoubleSlabTuto, SingleSlabTuto, BlockTutorialCake, BlockNewFenceTutorial, BlockNewWallTutorial, blockFluidTutorial, blockTable, blockSculpture;
-	public static Item ItemTutorial, ItemWithMetadata, TutorialHelmet, TutorialChestPlate, TutorialLeggings, TutorialBoots, TutorialEgg, TutorialSword, TutorialPickaxe, TutorialAxe, TutorialShovel, TutorialHoe, ItemTutorialCake, ItemCdTutorial, bucketTutorial;
+	public static Item ItemTutorial, ItemWithMetadata, TutorialHelmet, TutorialChestPlate, TutorialLeggings, TutorialBoots, TutorialEgg, TutorialSword, TutorialPickaxe, TutorialAxe, TutorialShovel, TutorialHoe, ItemTutorialCake, ItemCdTutorial, bucketTutorial, Tuto_Bow;
 	public static Fluid fluidTutorial;
 
 	static ArmorMaterial TutorialArmor = EnumHelper.addArmorMaterial("Tutorial", 20, new int[] {2, 8, 4, 2}, 15);
@@ -110,7 +110,8 @@ public class ModTutoriel
 		ItemTutorialCake = new ItemTutorialCake().setUnlocalizedName("TurorialGateauItem").setTextureName("modtutoriel:TutorialCake");
 		ItemCdTutorial = new ItemCdTutorial("cd").setUnlocalizedName("record").setCreativeTab(ModTutoriel.TutorialCreativeTabs);
 		bucketTutorial = new ItemBucketTutorial(blockFluidTutorial).setUnlocalizedName("bucketTutorial").setTextureName("modtutoriel:bucketTutorial");
-
+                Tuto_Bow = new Tuto_Bow().setUnlocalizedName("Tuto_Bow").setTextureName("modtutoriel:tuto_bow");
+                
 		// Enregistrement des items - Item registry
 		GameRegistry.registerItem(ItemTutorial, "ItemTutorial", "ModTutoriel");
 		GameRegistry.registerItem(ItemWithMetadata, "ItemWithMetadata", "ModTutoriel");
@@ -127,6 +128,7 @@ public class ModTutoriel
 		GameRegistry.registerItem(ItemTutorialCake, "TutorialGateauItem", "ModTutoriel");
 		GameRegistry.registerItem(ItemCdTutorial, "item_cd_tutoriel");
 		GameRegistry.registerItem(bucketTutorial, "BucketTutorial", "ModTutoriel");
+                GameRegistry.registerItem(Tuto_Bow, "Tuto_Bow", "ModTutoriel");
 
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("tutorial", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(bucketTutorial), FluidContainerRegistry.EMPTY_BUCKET);
 
